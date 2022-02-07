@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kotudyy.chatting">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.kotudyy.chatting.storage.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Chatting">
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_stat_ic_notification"/>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/yellow"/>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="fcm_default_channel"/>
+
+        <service
+            android:name="com.kotudyy.chatting.fcmMessaging.FirebaseMessageService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.kotudyy.chatting.profileDetail.MyProfileDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.kotudyy.chatting.ChatListActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.kotudyy.chatting.chatRoom.ChatRoomActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false"/>
+        <activity
+            android:name="com.kotudyy.chatting.login.LoginActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.kotudyy.chatting.login.AuthActivity"
+            android:exported="true" />
+
+    </application>
+
+</manifest>

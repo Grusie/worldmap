@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.kotudyy.chatting.chatRoom.ChatRoomActivity" >
+
+    <group>
+        <item
+            android:id="@+id/chatting_menu_exit"
+            android:title="@string/delete_chatroom" />
+    </group>
+
+</menu>
